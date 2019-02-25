@@ -2,6 +2,7 @@
 ::after,
 ::before {
     box-sizing: border-box;
+    column-span: all;
 }
 
 body {
@@ -12,7 +13,15 @@ body {
 h3,
 p,
 li {
-    font-size: 1.4rem;
+    font-size: 1rem;
+}
+
+@media (min-width: 500px) {
+    h3,
+    p,
+    li {
+        font-size: 1.4rem;
+    }
 }
 
 p,
@@ -23,11 +32,23 @@ li {
 }
 
 h1 {
-    font-size: 6.1rem;
+    font-size: 19vw;
     font-weight: 700;
     margin-bottom: 0.5em;
     line-height: 1;
     margin-top: 0;
+}
+
+@media (min-width: 400px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    h1 {
+        font-size: 6.1rem;
+    }
 }
 
 .small {
@@ -55,11 +76,17 @@ h2 {
 
 ul {
     margin-top: 0;
+    padding-left: 0;
 }
 
 li {
+    background-image: url(circle.svg);
+    background-repeat: no-repeat;
+    background-position: 0.5em 0.45em;
+    background-size: 0.385em;
+    padding-left: 1.4em;
     margin-bottom: 1.1em;
-    list-style-image: url(circle.svg);
+    list-style: none;
 }
 
 a {
@@ -71,66 +98,92 @@ a:hover {
 }
 
 .all {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 /* header */
 
 .header {
-    background-color:#0e0e0e;
-    width: 30%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-image: url(img/k.jpg);
-    background-position: top center;
-    background-size: cover;
-    text-align: center;
+    background-color: #0e0e0e;
     color: #ffffff;
     min-height: 100vh;
+    background-image: url(img/k.jpg);
+    background-position: 50% 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 1000px) {
+    .header {
+        width: 30%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        text-align: center;
+    }
 }
 
 .header p {
     text-shadow: 0 1px 4px rgba(72, 72, 72, 0.5);
     font-style: italic;
-    font-size: 1.6rem;
+    font-size: 6vw;
     font-weight: 500;
 }
 
+@media (min-width: 400px) {
+    .header p {
+        font-size: 1.6rem;
+    }
+}
+
 .headertext {
+    padding: 1rem;
+    width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 1rem;
-    width: 100%;
+}
+
+@media (min-width: 400px) {
+    .headertext {
+        padding: 1.6rem;
+    }
 }
 
 /* information */
-
-.box {
-    float: left;
-    width: 100%;
-    padding-left: 3rem;
-    padding-right: 3rem;
+@media (min-width: 1000px) {
+    .box {
+        float: left;
+        width: 100%;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
 }
 
 .box-grey {
     background-color: #f4f4f6;
 }
 
-.information {
-    float: left;
-    width: 70%;
-    margin-left: 30%;
+@media (min-width: 1000px) {
+    .information {
+        float: left;
+        width: 70%;
+        margin-left: 30%;
+    }
 }
 
 .details {
-    float: left;
-    width: 50%;
-    padding-left: 1.6rem;
-    padding-right: 1.6rem;
-    padding-top: 4.4rem;
-    padding-bottom: 4.4rem;
+    padding: 1.6rem;
+    padding-bottom: 0;
+}
+
+@media (min-width: 1000px) {
+    .details {
+        float: left;
+        width: 50%;
+        padding-top: 4.4rem;
+        padding-bottom: 4.4rem;
+    }
 }
 
 .border::after {
@@ -204,10 +257,18 @@ a:hover {
 }
 
 /*Contact*/
+
 .contact {
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
+
+@media (min-width: 500px) {
+    .contact {
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+}
+
 .contact span,
 .contact a {
     display: inline-block;
@@ -233,15 +294,22 @@ a:hover {
 }
 
 .links a {
-    font-size: 1.4rem;
+    font-size: 1rem;
+    display: inline-block;
 }
 
-.links a:nth-last-child(n + 2)::after {
+@media (min-width: 500px) {
+    .links a {
+        font-size: 1.4rem;
+    }
+}
+
+.links a:nth-last-child(n + 2) {
     /*Pro všechny odkazy, kromě posledního*/
-    content: url(circle.svg);
-    display: inline-block;
-    margin-left: 1em;
-    margin-right: 1em;
-    position: relative;
-    left: 2px; /*Za účelem vycentrovat obrázek*/
+    background-image: url(circle.svg);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    background-size: 0.385em;
+    padding-right: 1em;
+    margin-right: 0.615em;
 }
