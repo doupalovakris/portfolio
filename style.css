@@ -259,6 +259,7 @@ a:hover {
 /*Contact*/
 
 .contact {
+    display: flex;
     font-size: 1rem;
 }
 
@@ -271,7 +272,7 @@ a:hover {
 
 .contact span,
 .contact a {
-    display: inline-block;
+    flex: 1 1 auto;
     vertical-align: top;
 }
 
@@ -279,11 +280,11 @@ a:hover {
     color: black;
     text-transform: uppercase;
     font-weight: 600;
-    width: 35%;
+    padding-right: 1em;
+    white-space: nowrap;
 }
 
 .contact a {
-    width: 65%;
     text-align: right;
     font-weight: 400;
 }
